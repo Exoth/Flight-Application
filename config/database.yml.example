@@ -1,14 +1,14 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: Flight_development
+  database: flight_app_development
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: Flight_test
+  database: flight_app_test
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: Flight_production
+  database: flight_app_production

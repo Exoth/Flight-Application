@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Flight::Application.load_tasks
+FlightApp::Application.load_tasks

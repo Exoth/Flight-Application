@@ -1,2 +1,2 @@
-Flight::Application.routes.draw do
+FlightApp::Application.routes.draw do
 end
