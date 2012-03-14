@@ -27,7 +27,7 @@ class Flight < ActiveRecord::Base
   }
 
   def as_json(options = {})
-    super(options.merge(only: %w(departure arrival from to price)))
+    super(options.merge(only: %w(departure arrival from to)))
   end
 
   def self.search_variants(attrs)

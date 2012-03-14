@@ -1,0 +1,25 @@
+This is an experimental API of flight search.
+
+The path is /flights.json
+The method is GET.
+
+Expected mandatory params are:
+
+from, to - 3-letter IATA codes of airports.
+departure - date of departure in YY-MM-DD format.
+
+Optional params are:
+
+stopover - 3-letter IATA code of a stopover between 'from' and 'to' points.
+           Difference between departure time of the second part and arrival time of the first part must be from an hour to a day.
+price - max total price of all flights of the travel. So if there's a stopover, then it's a sum of prices of two parts of the travel.
+travel_time - max total travel time.
+              So if there's a stopover, then it's the difference between arrival time of the second part and departure time of the first part.
+
+Example of expected output in JSON:
+
+[{"price":"760.0","flights":[{"arrival":"2012-06-30T04:35:00Z","departure":"2012-06-30T02:49:00Z","from":"BNS","to":"EOE"},{"arrival":"2012-07-02T00:00:00Z","departure":"2012-07-01T00:00:00Z","from":"EOE","to":"DKC"}]}]
+
+Where "price" is already calculated total price of all parts of the travel.
+
+There's a task to create 100k random flights: rake demo:generate
