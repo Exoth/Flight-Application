@@ -6,8 +6,10 @@ describe Flight do
     it 'should return self joined elements in pairs with right attributes' do
       flight = FactoryGirl.create(:flight)
       joined_flight = FactoryGirl.create(:flight)
-      Flight.select_self_join(Flight.select('*').where(id: flight.id).joins("JOIN flights AS joined_flights ON joined_flights.id = #{joined_flight.id}"))[0].
-        map(&:attributes).should == [flight, joined_flight].map(&:attributes)
+      Flight.select_self_join(
+        Flight.select('*').where(id: flight.id).
+               joins("JOIN flights AS joined_flights ON joined_flights.id = #{joined_flight.id}")
+      )[0].map(&:attributes).should == [flight, joined_flight].map(&:attributes)
     end
   end
 
