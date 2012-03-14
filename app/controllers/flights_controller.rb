@@ -1,8 +1,11 @@
 class FlightsController < ApplicationController
   respond_to :json
 
+  rescue_from ArgumentError do |exception|
+    respond_with({error: exception.message}, status: 400)
+  end
+
   def index
-    flights = Flight.search(params.select{|k,v| %w(from to travel_time departure price stopover).include?(k) }, extract_prices: true)
-    flights ? respond_with(flights) : respond_with("Invalid arguments.", status: 400)
+    respond_with( Flight.search_variants( params.slice( *Flight::SEARCH_ATTRS ) ) )
   end
 end
