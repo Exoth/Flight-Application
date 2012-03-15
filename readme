@@ -22,4 +22,4 @@ Example of expected output in JSON:
 
 Where "price" is already calculated total price of all parts of the travel.
 
-There's a task to create 100k random flights (IATA airport codes are from AAA to EEE to reduce amount of airports): rake demo:generate
+There's a task to create 100k random flights (IATA airport codes are from AAA to CCC to reduce amount of airports): rake demo:generate
