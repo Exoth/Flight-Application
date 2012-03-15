@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence(:iata) { 3.times.map{65.+(rand(25)).chr}.join }
+  sequence(:iata) { 3.times.map{rand(65..69).chr}.join } # IATA codes are generated from AAA to EEE to reduce amount of airports.
 
   factory :flight do
     from      { FactoryGirl.generate :iata }
