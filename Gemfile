@@ -16,10 +16,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'factory_girl_rails'
 
 group :test, :development do
   gem "rspec-rails"
-  gem 'factory_girl_rails'
 end
 
 # To use ActiveModel has_secure_password
